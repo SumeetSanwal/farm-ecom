@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Add Product</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'style3.css' %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
+    .navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+    
+    /* Remove the jumbotron's default bottom margin */ 
+     .jumbotron {
+      margin-bottom: 0;
+    }
+   
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="home"><h3>Home</h3></a></li>
+      </ul>     
+    </div>
+  </div>
+</nav>
+<div class="container">
+<form enctype="multipart/form-data" method="post" id="fruit_form" novalidate="">
+    {% csrf_token %}
+    <div>
+      <fieldset class="module aligned ">
+        <div class="form-row field-prodname">
+          <div>
+            <label class="required" for="id_prodname">Prodname:</label>
+            <input type="text" name="prodname" class="vTextField" maxlength="30" required="" id="id_prodname">
+          </div>
+        </div>
+        <div class="form-row field-price">
+          <div>
+            <label class="required" for="id_price">Price:</label>
+            <input type="number" name="price" class="vIntegerField" required="" id="id_price">
+          </div>
+        </div>
+        <div class="form-row field-image">
+          <div>
+            <label class="required" for="id_image">Image:</label>
+            <input type="file" name="image" accept="image/*" required="" id="id_image">
+          </div>
+        </div>
+        <div class="form-group field-cat">
+          <label for="cat">Category:</label>
+          <select class="form-control" id="cat" name="cat">
+            <option value="Fruits">Fruits</option>
+            <option value="Vegetables">Vegetables</option>
+            <option value="Grains">Grains</option>
+            <option value="Poulatry">Poulatry</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group form-button">
+        <input type="submit" name="submit" id="submit" class="form-submit" value="submit" />
+        </div>
+      </fieldset>
+    </div>
+    <!-- <button type="button" class="btn btn-success">Submit</button> -->
+</form>
+</div>
+</body>
+</html>
+ 

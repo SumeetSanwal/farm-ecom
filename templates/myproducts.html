@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>My Product</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'style3.css' %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
+    .navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+    
+    /* Remove the jumbotron's default bottom margin */ 
+     .jumbotron {
+      margin-bottom: 0;
+    }
+   
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="home"><h3>Home</h3></a></li>
+      </ul>     
+    </div>
+  </div>
+</nav>
+
+<div class="container">    
+    {% for x in img %}
+    {% if forloop.first %}<div class="row ">{% endif %}
+        <div class="col-lg-4 col-md-4 col-12" >
+    <div class="text-center mt-2">
+        <img src="{{x.image.url}}"  height="90%" width="90%" class="img-thumbnail" alt="...">
+        <h2 class="text-center" >{{x.prodname}}</h2>
+        <h2 class="text-center" >{{x.price}}</h2>
+            </div>
+        </div>
+        {% if forloop.counter|divisibleby:3 %}
+    </div>
+    <div class=row>{% endif %}
+    {% if forloop.last %}</div>{% endif %}
+    {% endfor %}
+
+    {% for x in img2 %}
+    {% if forloop.first %}<div class="row ">{% endif %}
+        <div class="col-lg-4 col-md-4 col-12" >
+    <div class="text-center mt-2">
+        <img src="{{x.image.url}}"  height="90%" width="90%" class="img-thumbnail" alt="...">
+        <h2 class="text-center" >{{x.prodname}}</h2>
+            </div>
+        </div>
+        {% if forloop.counter|divisibleby:3 %}
+    </div>
+    <div class=row>{% endif %}
+    {% if forloop.last %}</div>{% endif %}
+    {% endfor %}
+
+    {% for x in img3 %}
+    {% if forloop.first %}<div class="row ">{% endif %}
+        <div class="col-lg-4 col-md-4 col-12" >
+    <div class="text-center mt-2">
+        <img src="{{x.image.url}}"  height="90%" width="90%" class="img-thumbnail" alt="...">
+        <h2 class="text-center" >{{x.prodname}}</h2>
+            </div>
+        </div>
+        {% if forloop.counter|divisibleby:3 %}
+    </div>
+    <div class=row>{% endif %}
+    {% if forloop.last %}</div>{% endif %}
+    {% endfor %}
+
+    {% for x in img4 %}
+    {% if forloop.first %}<div class="row ">{% endif %}
+        <div class="col-lg-4 col-md-4 col-12" >
+    <div class="text-center mt-2">
+        <img src="{{x.image.url}}"  height="90%" width="90%" class="img-thumbnail" alt="...">
+        <h2 class="text-center" >{{x.prodname}}</h2>
+            </div>
+        </div>
+        {% if forloop.counter|divisibleby:3 %}
+    </div>
+    <div class=row>{% endif %}
+    {% if forloop.last %}</div>{% endif %}
+    {% endfor %}
+
+    {% for x in img5 %}
+    {% if forloop.first %}<div class="row ">{% endif %}
+        <div class="col-lg-4 col-md-4 col-12" >
+    <div class="text-center mt-2">
+        <img src="{{x.image.url}}"  height="90%" width="90%" class="img-thumbnail" alt="...">
+        <h2 class="text-center" >{{x.prodname}}</h2>
+            </div>
+        </div>
+        {% if forloop.counter|divisibleby:3 %}
+    </div>
+    <div class=row>{% endif %}
+
+        {% if forloop.last %}</div>{% endif %}
+
+    {% endfor %}
+</div>
+</body>
+</html>
+ 
