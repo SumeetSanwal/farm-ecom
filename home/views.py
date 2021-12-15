@@ -37,15 +37,15 @@ def login(request):
             # request.session['username']=name
             if profession=='customer':
                 # return redirect("/customer")
-                name = Customer.objects.filter(cname=name, cpassword=password)
-                if name:
+                status = Customer.objects.filter(cname=name, cpassword=password)
+                if status:
                     return render(request,"customer.html",{'username':name})
                 else:
                     return redirect("login")  
             else:
                  # return redirect("/farmer")
-                name = Farmer.objects.filter(fname=name, fpassword=password)
-                if name:
+                status = Farmer.objects.filter(fname=name, fpassword=password)
+                if status:
                     return render(request, "farmer.html", {'username': name})
                 else:
                     return redirect("login")
